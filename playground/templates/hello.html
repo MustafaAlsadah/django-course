@@ -7,9 +7,9 @@
     {% endif %}
 
     <ul>
-      <h2>Products with low inventory:-</h2>
-      {%for product in products%}
-        <li>{{product.title}} [ID:{{product.id}}]</li>
+      <h2>Last 5 orders:-</h2>
+      {%for order in orders%}
+        <li>{{order.first_name}} {{order.last_name}}</li>
         <br>
       {%endfor%}
     </ul>

@@ -29,8 +29,6 @@ class Product(models.Model):
         return self.title
     class Meta:
         ordering = ['title']
-    
-
 
 class Customer(models.Model):
     MEMBERSHIP_BRONZE = 'B'
@@ -69,6 +67,9 @@ class Order(models.Model):
     payment_status = models.CharField(
         max_length=1, choices=PAYMENT_STATUS_CHOICES, default=PAYMENT_STATUS_PENDING)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
+
+    def __str__(self) -> str:
+        return str(self.pk)
 
 
 class OrderItem(models.Model):
